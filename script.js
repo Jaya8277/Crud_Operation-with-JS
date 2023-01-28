@@ -34,6 +34,7 @@ document.querySelector("#student-form").addEventListener("submit",(e)=> {
     //validate
     if(firstName == "" || lastName == "" || rollNo == ""){
         showAlert("Please fill in all fields","danger");
+        alert("Please fill in all fields","danger");
     }
     else{
         if(selectedRow == null){
@@ -52,6 +53,7 @@ document.querySelector("#student-form").addEventListener("submit",(e)=> {
             list.appendChild(row);
             selectedRow == null;
             showAlert("Student added data", "success");
+            alert("Student added data", "success");
         }
         else{
             selectedRow.children[0].textContent = firstName;
@@ -59,6 +61,7 @@ document.querySelector("#student-form").addEventListener("submit",(e)=> {
             selectedRow.children[2].textContent = rollNo;
             selectedRow = null;
             showAlert("Student Info Edited","info");
+            alert("Student Info Edited","info");
         }
         clearFields();
     }
@@ -82,5 +85,6 @@ document.querySelector("#student-list").addEventListener("click",(e)=>{
     if(target.classList.contains("delete")){
         target.parentElement.parentElement.remove();
         showAlert("Student Data Deleted", "danger");
+        alert("Student Data Deleted", "danger");
     }
 });
